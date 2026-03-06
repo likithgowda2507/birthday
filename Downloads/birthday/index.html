@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Happy Birthday! 🎉</title>
+    <meta name="description"
+        content="A special birthday surprise crafted with love. Open the envelope to discover heartfelt wishes and celebrations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Music Toggle Button -->
+    <button id="music-toggle" class="music-btn" aria-label="Toggle Music">
+        <span class="music-icon">🎵</span>
+        <span class="music-status">OFF</span>
+    </button>
+
+    <!-- ===== SECTION 1: LANDING / CANDLE-LIT ENVELOPE ===== -->
+    <section id="landing" class="section active">
+        <div class="candle-scene">
+            <div class="table-surface"></div>
+
+            <!-- Candles -->
+            <div class="candles-container">
+                <div class="candle candle-1">
+                    <div class="flame"></div>
+                    <div class="wax"></div>
+                </div>
+                <div class="candle candle-2">
+                    <div class="flame"></div>
+                    <div class="wax"></div>
+                </div>
+            </div>
+
+            <div class="landing-content">
+                <div class="envelope-wrapper" id="envelope-wrapper">
+                    <div class="envelope" id="envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-body"></div>
+                        <div class="envelope-letter">
+                            <div class="letter-text">Open Me...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tap-hint" id="tap-hint">
+                    <span class="tap-icon">✨</span>
+                    <span>Tap the envelope to begin</span>
+                </div>
+            </div>
+
+            <!-- Fireflies -->
+            <div class="fireflies-container" id="fireflies-container"></div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2: BIRTHDAY GREETING ===== -->
+    <section id="greeting" class="section">
+        <div class="greeting-content">
+            <div class="birthday-text-wrapper">
+                <h1 class="birthday-title">
+                    <span class="title-line line-1">Happy</span>
+                    <span class="title-line line-2">Birthday</span>
+                    <span class="title-line line-3">CHANDANA! 🎉</span>
+                </h1>
+                <div class="birthday-emoji-row">
+                    <span class="float-emoji" style="--delay: 0s">🎂</span>
+                    <span class="float-emoji" style="--delay: 0.3s">🎈</span>
+                    <span class="float-emoji" style="--delay: 0.6s">🎁</span>
+                    <span class="float-emoji" style="--delay: 0.9s">🎉</span>
+                    <span class="float-emoji" style="--delay: 1.2s">🥳</span>
+                </div>
+            </div>
+            <p class="greeting-sub" id="typed-text"></p>
+            <button class="continue-btn" id="greeting-next">
+                <span>See Your Wishes</span>
+                <span class="btn-arrow">→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3: MESSAGE CARDS ===== -->
+    <section id="messages" class="section">
+        <div class="messages-content">
+            <h2 class="section-title">💝 Special Wishes For You</h2>
+
+            <div class="cards-container">
+                <div class="message-card glass-card" data-delay="0">
+                    <div class="card-icon">🌟</div>
+                    <p class="card-text">On this beautiful day, I just want you to know how truly special you are. Your
+                        smile lights up every room and your kindness touches every heart.</p>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="message-card glass-card" data-delay="200">
+                    <div class="card-icon">💖</div>
+                    <p class="card-text">May this year bring you endless joy, success in everything you pursue, and all
+                        the love you so generously give to others reflected back to you a hundredfold.</p>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="message-card glass-card" data-delay="400">
+                    <div class="card-icon">🎯</div>
+                    <p class="card-text">Dream big, aim high, and never stop believing in yourself. You have the power
+                        to achieve anything you set your mind to — and this is your year to shine!</p>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="message-card glass-card" data-delay="600">
+                    <div class="card-icon">🦋</div>
+                    <p class="card-text">Like a butterfly, may you continue to grow, transform, and spread beauty
+                        wherever you go. The world is truly a better place with you in it.</p>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="message-card glass-card" data-delay="800">
+                    <div class="card-icon">🎶</div>
+                    <p class="card-text">May your life always be filled with music, laughter, and the warmth of people
+                        who love you. Every day is a celebration when you're around!</p>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+
+            <button class="continue-btn" id="messages-next">
+                <span>One More Thing...</span>
+                <span class="btn-arrow">→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4: GALLERY ===== -->
+    <section id="gallery" class="section">
+        <div class="gallery-content">
+            <h2 class="section-title">🎞️ Cherished Moments</h2>
+            <p class="gallery-subtitle">Every moment with you is a memory worth keeping forever</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-delay="0">
+                    <img src="photos/85059C8C-AC6B-4099-981D-98756D281AEC.PNG" alt="Memory 1">
+                </div>
+                <div class="gallery-item" data-delay="150">
+                    <img src="photos/AEBE98E1-EDE8-49E3-B4E2-B5AB88253BF3.PNG" alt="Memory 2">
+                </div>
+                <div class="gallery-item" data-delay="300">
+                    <img src="photos/IMG_0242.jpg" alt="Memory 3">
+                </div>
+                <div class="gallery-item" data-delay="450">
+                    <img src="photos/IMG_0268.jpg" alt="Memory 4">
+                </div>
+                <div class="gallery-item" data-delay="600">
+                    <img src="photos/IMG_0335.jpg" alt="Memory 5">
+                </div>
+                <div class="gallery-item" data-delay="750">
+                    <img src="photos/IMG_0392.jpg" alt="Memory 6">
+                </div>
+            </div>
+
+            <button class="continue-btn" id="gallery-next">
+                <span>Final Surprise</span>
+                <span class="btn-arrow">→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5: FINAL WISH ===== -->
+    <section id="final" class="section">
+        <div class="final-content">
+            <div class="cake-wrapper">
+                <div class="cake-emoji">🎂</div>
+                <div class="candle-glow"></div>
+            </div>
+
+            <h2 class="final-title">
+                <span class="final-line">Make a Wish</span>
+                <span class="final-line accent">& Blow the Candles!</span>
+            </h2>
+
+            <div class="final-message glass-card">
+                <p>Today is all about <strong>YOU</strong>.
+                    Thank you for being the amazing person you are.
+                    May every dream in your heart come true,
+                    and may this birthday be the beginning of your greatest chapter yet.</p>
+                <div class="signature">
+                    <span class="heart-beat">❤️</span>
+                    <span>With all my love</span>
+                </div>
+            </div>
+            <div class="wish-title-wrapper">
+                <h2 class="wish-title">A Journey of <span class="highlight" id="wish-years-text">23 Years</span>...</h2>
+            </div>
+
+            <!-- Birth Timer Container -->
+            <div class="birth-timer-container" id="birth-timer">
+                <div class="timer-segment">
+                    <span class="timer-value" id="timer-years">00</span>
+                    <span class="timer-label">Years</span>
+                </div>
+                <div class="timer-segment">
+                    <span class="timer-value" id="timer-months">00</span>
+                    <span class="timer-label">Months</span>
+                </div>
+                <div class="timer-segment">
+                    <span class="timer-value" id="timer-days">00</span>
+                    <span class="timer-label">Days</span>
+                </div>
+                <div class="timer-segment">
+                    <span class="timer-value" id="timer-hours">00</span>
+                    <span class="timer-label">Hrs</span>
+                </div>
+                <div class="timer-segment">
+                    <span class="timer-value" id="timer-minutes">00</span>
+                    <span class="timer-label">Min</span>
+                </div>
+                <div class="timer-segment">
+                    <span class="timer-value" id="timer-seconds">00</span>
+                    <span class="timer-label">Sec</span>
+                </div>
+            </div>
+
+            <!-- Animated Child with Rose (Pure CSS) -->
+            <div class="child-character" id="child-character">
+                <div class="speech-bubble" id="speech-bubble">
+                    <p>Happy Birthday<br><strong>Chandana!</strong> 🌹</p>
+                    <div class="bubble-arrow"></div>
+                </div>
+                <div class="css-child" id="css-child">
+                    <!-- Party Hat -->
+                    <div class="child-hat">
+                        <div class="hat-pom"></div>
+                    </div>
+                    <!-- Head -->
+                    <div class="child-head">
+                        <div class="child-eye child-eye-l"></div>
+                        <div class="child-eye child-eye-r"></div>
+                        <div class="child-blush child-blush-l"></div>
+                        <div class="child-blush child-blush-r"></div>
+                        <div class="child-mouth"></div>
+                    </div>
+                    <!-- Body -->
+                    <div class="child-body">
+                        <!-- Left arm (waves) -->
+                        <div class="child-arm child-arm-l">
+                            <div class="child-hand child-hand-l"></div>
+                        </div>
+                        <!-- Right arm (holds rose) -->
+                        <div class="child-arm child-arm-r">
+                            <div class="child-hand child-hand-r">
+                                <div class="child-rose">
+                                    <div class="rose-stem"></div>
+                                    <div class="rose-flower">🌹</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Legs -->
+                    <div class="child-legs">
+                        <div class="child-leg child-leg-l">
+                            <div class="child-foot child-foot-l"></div>
+                        </div>
+                        <div class="child-leg child-leg-r">
+                            <div class="child-foot child-foot-r"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Rose petals falling -->
+                <div class="rose-petals" id="rose-petals"></div>
+            </div>
+
+            <div class="floating-hearts" id="floating-hearts"></div>
+
+            <button class="restart-btn" id="restart-btn">
+                <span>🔄 Replay Surprise</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Audio element for birthday music -->
+    <audio id="birthday-audio" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
