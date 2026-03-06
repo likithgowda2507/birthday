@@ -21,7 +21,7 @@ let currentSection = 0;
 let isTransitioning = false;
 
 // ---- BIRTH TIMER LOGIC ----
-const birthDate = new Date('2003-03-07T19:00:00');
+const birthDate = new Date('2003-03-07T00:00:00');
 
 function updateBirthTimer() {
     const now = new Date();
